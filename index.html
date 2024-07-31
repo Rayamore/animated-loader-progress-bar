@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #001d10;
+        }
+        
+        .loading {
+            position: relative;
+            height: 250px;
+            width: 250px;
+        }
+        
+        .loading .block {
+            position: absolute;
+            width: 18px;
+            height: 25px;
+            background: #050;
+            left: 50%;
+            box-shadow: 0 0 10px cyan, 0 0 10px cyan;
+            transform: rotate(calc(18deg * var(--i)));
+            transform-origin: 0 125px;
+            animation: flat 2s ease-in-out infinite alternate;
+            animation-delay: calc(0.05s * var(--i));
+        }
+        
+        p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 35px;
+            color: cyan;
+            filter: drop-shadow(0 0 10px cyan);
+        }
+        
+        @keyframes flat {
+            0%,
+            50% {
+                background-color: rgb(83, 26, 175);
+            }
+            100% {
+                /*  */
+                background-color: rgb(83, 26, 175);
+                background: none;
+                transform: rotate(360deg);
+                transform: rotateZ(-20deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="loading">
+            <div class="block" style="--i:1;"></div>
+            <div class="block" style="--i:2;"></div>
+            <div class="block" style="--i:3;"></div>
+            <div class="block" style="--i:4;"></div>
+            <div class="block" style="--i:5;"></div>
+            <div class="block" style="--i:6;"></div>
+            <div class="block" style="--i:7;"></div>
+            <div class="block" style="--i:8;"></div>
+            <div class="block" style="--i:9;"></div>
+            <div class="block" style="--i:10;"></div>
+            <div class="block" style="--i:11;"></div>
+            <div class="block" style="--i:12;"></div>
+            <div class="block" style="--i:13;"></div>
+            <div class="block" style="--i:14;"></div>
+            <div class="block" style="--i:15;"></div>
+            <div class="block" style="--i:16;"></div>
+            <div class="block" style="--i:17;"></div>
+            <div class="block" style="--i:18;"></div>
+            <div class="block" style="--i:19;"></div>
+            <div class="block" style="--i:20;"></div>
+        </div>
+        <p>loading</p>
+    </section>
+</body>
+
+</html>
